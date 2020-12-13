@@ -1,3 +1,4 @@
+import Ctweet from 'components/Ctweet';
 import { dbService } from 'myBase';
 import React, { useEffect, useState } from 'react';
 
@@ -34,9 +35,7 @@ const Home = ({userObj}) => {
             </form>
             <div>
                 {ctweets.map((ctweet) => (
-                    <div key={ctweet.id}>
-                        <h4>{ctweet.text}</h4>
-                    </div>
+                    <Ctweet key={ctweet.id} CtweetObj={ctweet} isOwner={ctweet.creatorId === userObj.uid}/>
                 ))}
             </div>
         </div>
