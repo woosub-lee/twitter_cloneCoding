@@ -38,6 +38,9 @@ const Ctweet = ({CtweetObj, isOwner}) => {
                 </Fragment>
             ):(
                 <Fragment>
+                    {CtweetObj.attachmentUrl && (
+                        <img src={CtweetObj.attachmentUrl} width="50px" height="50px" />
+                    )}
                     <h4>{CtweetObj.text}</h4>
                     {isOwner && ( 
                         <Fragment>
