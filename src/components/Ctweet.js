@@ -1,4 +1,4 @@
-import { dbService } from "myBase";
+import { dbService, storageService } from "myBase";
 import React, { Fragment, useState } from "react";
 
 const Ctweet = ({CtweetObj, isOwner}) => {
@@ -8,6 +8,7 @@ const Ctweet = ({CtweetObj, isOwner}) => {
         const ok = window.confirm("Are you sure you want to delete this?");
         if(ok){
             await dbService.doc(`Ctweet/${CtweetObj.id}`).delete();
+            await storageService.refFromURL(CtweetObj.attachmentUrl).delete();
         }
     }
     const toggleEditing = () => setEditing((prev) => !prev);
