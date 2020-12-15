@@ -1,5 +1,7 @@
 import { dbService, storageService } from "myBase";
 import React, { Fragment, useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrash, faPencilAlt } from "@fortawesome/free-solid-svg-icons";
 
 const Ctweet = ({CtweetObj, isOwner}) => {
     const [editing, setEditing] = useState(false);
@@ -24,35 +26,50 @@ const Ctweet = ({CtweetObj, isOwner}) => {
         setNewCtweet(value);
     }
     return (
-        <div>
+        <>
+        <div className="ctweet">
             {editing ? (
                 <Fragment>
                     {isOwner &&
                         <Fragment>
-                            <form onSubmit={onSubmit}>
-                                <input type="text" placeholder="Edit your Ctweet" value={newCtweet} required onChange={onChange} />
-                                <input type="submit" value="Update Ctweet" />
+                            <form onSubmit={onSubmit} className="container ctweetEdit">
+                                <input 
+                                    type="text" 
+                                    placeholder="Edit your Ctweet" 
+                                    value={newCtweet} 
+                                    required
+                                    autoFocus 
+                                    onChange={onChange} 
+                                    className="formInput" />
+                                <input type="submit" value="Update Ctweet" className="formBtn" />
                             </form>
-                            <button onClick={toggleEditing}>Cancel</button>
+                            <span onClick={toggleEditing} className="formBtn cancelBtn">
+                                Cancel
+                            </span>
                         </Fragment>
                     }
                 </Fragment>
             ):(
                 <Fragment>
-                    {CtweetObj.attachmentUrl && (
-                        <img src={CtweetObj.attachmentUrl} width="50px" height="50px" />
-                    )}
                     <h4>{CtweetObj.text}</h4>
+                    {CtweetObj.attachmentUrl && <img src={CtweetObj.attachmentUrl} />}
                     {isOwner && ( 
                         <Fragment>
-                            <button onClick={onDeleteClick}>Delete Ctweet</button>
-                            <button onClick={toggleEditing}>Edit Ctweet</button>
+                            <div className="ctweet__actions">
+                                <span onClick={onDeleteClick}>
+                                    <FontAwesomeIcon icon={faTrash} />
+                                </span>
+                                <span onClick={toggleEditing}>
+                                    <FontAwesomeIcon icon={faPencilAlt} />
+                                </span>
+                            </div>
                         </Fragment>
                     )}
                 </Fragment>
             )}
             
         </div>
+        </>
     );
 };
 
