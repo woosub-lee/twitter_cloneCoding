@@ -6,7 +6,7 @@ import CtweetWriter from 'components/CtweetWriter';
 const Home = ({userObj}) => {
     const [ctweets, setCtweets] = useState([]);
     useEffect(() => {
-        dbService.collection("Ctweet").orderBy("createdAt","desc").onSnapshot((snapshot) => {
+        dbService.collection("Ctweet").orderBy("createdAt","asc").onSnapshot((snapshot) => {
             const CtweetArray = snapshot.docs.map(doc => ({
                 id: doc.id,
                 ...doc.data(),
