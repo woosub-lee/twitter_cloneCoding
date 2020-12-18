@@ -277,3 +277,27 @@ form {
   font-size: 12px;
   text-decoration: underline;
 }
+.ClickBtn {
+  cursor: pointer;
+  width: 100%;
+  padding: 7px 20px;
+  text-align: center;
+  color: white;
+  border-radius: 20px;
+  background-color: #04aaff;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+.RedBtn {
+  cursor: pointer;
+  background-color: tomato;
+}
+.WhiteBtn {
+  cursor: pointer;
+  background-color: white;
+  color: black;
+}
+.GreenBtn {
+  cursor: pointer;
+  background-color: #aad272;
+}
