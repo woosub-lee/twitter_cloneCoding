@@ -15,16 +15,16 @@ const Home = ({userObj}) => {
         })
     },[]);
     const onYoutubeClick = () => {
-        window.open(`https://youtube.com`);
+        window.open(`https://youtube.com`,"_self");
     }
     const onGoogleClick = () => {
-        window.open(`https://google.com/`);
+        window.open(`https://google.com/`,"_self");
     }
     const onClassroomClick = () => {
-        window.open(`https://classroom.google.com/`);
+        window.open(`https://classroom.google.com/`,"_self");
     }
     const onGithubClick = () => {
-        window.open(`https://github.com/`);
+        window.open(`https://github.com/`,"_self");
     }
     return (
         <div className="container">
