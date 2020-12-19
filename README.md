@@ -5,6 +5,6 @@ Thanks to Nicolas
 2. Can post text and picture  
 3. Can edit profile name  
 4. Can edit and delete posting  
-5. Can make new Tab by clicking button  
+5. Can link another web site by clicking button  
 ---------
 for Learning React and Firebase
