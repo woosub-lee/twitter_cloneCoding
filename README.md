@@ -6,5 +6,6 @@ Thanks to Nicolas
 3. Can edit profile name  
 4. Can edit and delete posting  
 5. Can link another web site by clicking button  
+6. Can link picture by clicking  
 ---------
 for Learning React and Firebase
