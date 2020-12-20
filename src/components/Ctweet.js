@@ -52,6 +52,7 @@ const Ctweet = ({CtweetObj, isOwner}) => {
             ):(
                 <Fragment>
                     <h4>{CtweetObj.text}</h4>
+                    <h6>{CtweetObj.displayName}님이 작성함</h6>
                     {CtweetObj.attachmentUrl && <img src={CtweetObj.attachmentUrl} />}
                     {isOwner && ( 
                         <Fragment>

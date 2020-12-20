@@ -22,6 +22,7 @@ const CtweetWriter = ({userObj}) => {
             text: ctweet,
             createdAt: Date.now(),
             creatorId: userObj.uid,
+            displayName: userObj.displayName,
             attachmentUrl
         };
         await dbService.collection("Ctweet").add(CtweetObj);
