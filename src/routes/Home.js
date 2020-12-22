@@ -2,6 +2,7 @@ import Ctweet from 'components/Ctweet';
 import { dbService } from 'myBase';
 import React, { useEffect, useState } from 'react';
 import CtweetWriter from 'components/CtweetWriter';
+import GoogleSearcher from 'components/GoogleSearcher';
 
 const Home = ({userObj}) => {
     const [ctweets, setCtweets] = useState([]);
@@ -28,6 +29,7 @@ const Home = ({userObj}) => {
     }
     return (
         <div className="container">
+            <GoogleSearcher />
             <CtweetWriter userObj={userObj}/>
             <span onClick={onYoutubeClick} className="ClickBtn RedBtn">
                 Go To Youtube
